@@ -9,14 +9,14 @@ import { HttpClient } from '@angular/common/http';
 export class ValueComponent implements OnInit {
   values: any;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.getValues();
   }
 
   getValues() {
-    this.httpClient.get('http://localhost:5000/api/values').subscribe(
+    this.http.get('http://localhost:5000/api/values').subscribe(
       response => {
         this.values = response;
       },
